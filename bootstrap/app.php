@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\EnsureJsonResponseForApi;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -18,9 +19,13 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->alias([
             'verified' => \App\Http\Middleware\EnsureEmailIsVerified::class,
+            'force.json' => EnsureJsonResponseForApi::class,
         ]);
 
         //
+        $middleware->validateCsrfTokens([
+            'http://127.0.0.1:8000/*'
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
