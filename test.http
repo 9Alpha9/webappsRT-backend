@@ -6,7 +6,7 @@ GET http://127.0.0.1:8000/csrf-token
 ###
 POST http://127.0.0.1:8000/login
 Content-Type: application/json
-X-CSRF-TOKEN: 77nu9qgkh6p4qtWPri6BZBb061eb6xeUhSKA2iKn
+# X-CSRF-TOKEN: KQqxEVzxMv7N2uaUpqAiMp7sU0ktieyqSlHAZFzj
 
 {
     "nik": "123",
