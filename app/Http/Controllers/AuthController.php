@@ -7,6 +7,7 @@ use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthController extends Controller
@@ -24,5 +25,10 @@ class AuthController extends Controller
         }
 
         return response()->json(['error' => 'Unauthorized'], 401);
+    }
+
+    public function logout() {
+        auth()->logout();
+        return response()->json(['message' => 'Logged Out Successfully!']);
     }
 }
