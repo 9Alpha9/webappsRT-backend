@@ -1,0 +1,19 @@
+GET http://127.0.0.1:8000/user
+
+###
+GET http://127.0.0.1:8000/csrf-token
+
+###
+POST http://127.0.0.1:8000/login
+Content-Type: application/json
+# X-CSRF-TOKEN: KQqxEVzxMv7N2uaUpqAiMp7sU0ktieyqSlHAZFzj
+
+{
+    "nik": "123",
+    "password": "test123"
+}
+
+###
+GET http://127.0.0.1:8000/api/skk
+Content-Type: application/json
+# Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvbG9naW4iLCJpYXQiOjE3NDU4MzU0NTQsImV4cCI6MTc0NTgzOTA1NCwibmJmIjoxNzQ1ODM1NDU0LCJqdGkiOiJIbjNyYTFWME5IM1VieXlBIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Cy-kmEryi0Tsdt7RjehKMWgQijtf6ZTab6MVovP_fgg
