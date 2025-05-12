@@ -37,7 +37,7 @@ class AuthController extends Controller
     public function register(RegisterRequest $request): JsonResponse {
         try {
             try {
-                $checkNIK = User::where('nik', '==', $request['nik'])->get();
+                $checkNIK = User::where('nik', '=', $request['nik'])->get();
 
                 if ($checkNIK->count() > 0) {
                     return response()->json(['error' => "NIK Sudah terdaftar!"]);
