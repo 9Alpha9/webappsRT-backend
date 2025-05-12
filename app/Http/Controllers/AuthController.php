@@ -36,14 +36,18 @@ class AuthController extends Controller
 
     public function register(RegisterRequest $request): JsonResponse {
         try {
+            try {
+                $checkNIK = User::where('nik', '==', $request['nik'])->get();
+
+                if ($checkNIK->count() > 0) {
+                    return response()->json(['error' => "NIK Sudah terdaftar!"]);
+                }
+            }
             $request['password'] = bcrypt($request['password']);
     
             $user = User::create($request->validated());
     
             return response()->json($user);
-            return response()->json([
-                'message' => 'User successfully created. Use this token to access the API.',
-            ], 200);
         } catch (\Exception $e) {
             return response()->json(['message' => $e->getMessage()], 400);
         }
