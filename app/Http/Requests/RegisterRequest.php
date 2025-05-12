@@ -23,10 +23,10 @@ class RegisterRequest extends FormRequest
     {
         return [
             //
-            'nik' => 'string|required|digits:16',
             'full_name' => 'string|required',
-            'address' => 'string|required',
+            'nik' => 'string|required|digits:16',
             'handphone' => 'string|required|digits_between:10,14',
+            'address' => 'string|required',
             'password' => 'string|required',
         ];
     }
