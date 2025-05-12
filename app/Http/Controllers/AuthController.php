@@ -42,6 +42,8 @@ class AuthController extends Controller
                 if ($checkNIK->count() > 0) {
                     return response()->json(['error' => "NIK Sudah terdaftar!"]);
                 }
+            } catch (\Exception $e) {
+                return response()->json(['message' => $e->getMessage()], 400);
             }
             $request['password'] = bcrypt($request['password']);
     
