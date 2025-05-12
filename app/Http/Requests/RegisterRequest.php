@@ -39,7 +39,7 @@ class RegisterRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'string' => ':attribute tidak boleh di isi simbol (!@#$%)',
+            'string' => ':attribute tidak boleh kosong atau di isi simbol (!@#$%)',
             'required' => ':attribute harus di isi',
             'digits' => ':attribute harus :values digit',
             'digits_between' => ':attribute harus antara :min - :max',
