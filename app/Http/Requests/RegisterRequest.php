@@ -30,4 +30,32 @@ class RegisterRequest extends FormRequest
             'password' => 'string|required',
         ];
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [
+            'required' => ':attribute harus di isi',
+            'digits' => ':attribute harus :values digit',
+            'digits_between' => ':attribute harus antara :min - :max',
+        ];
+    }
+
+    /**
+     * Get custom attributes for validator errors.
+     *
+     * @return array<string, string>
+     */
+    public function attributes(): array
+    {
+        return [
+            'nik' => 'NIK',
+            'full_name' => 'Nama Lengkap',
+            'address' => 'Alamat',
+        ];
+    }
 }
