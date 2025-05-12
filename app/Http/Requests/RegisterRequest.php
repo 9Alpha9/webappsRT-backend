@@ -39,9 +39,9 @@ class RegisterRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'required' => ':attribute harus di isi',
-            'digits' => ':attribute harus :digits digit',
-            'digits_between' => ':attribute harus antara :min - :max',
+            'required' => ':attribute tidak boleh kosong!',
+            'digits' => ':attribute harus :digits digit!',
+            'digits_between' => ':attribute harus antara :min - :max!',
         ];
     }
 

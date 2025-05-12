@@ -23,8 +23,26 @@ class LoginRequest extends FormRequest
     {
         return [
             //
-            'nik' => 'required|integer',
+            'nik' => 'required|integer|digits:16',
             'password' => 'required'
+        ];
+    }
+    public function messages():array{
+
+            return [
+                'required' => ':attribute tidak boleh kosong!',
+                'required' => ':attribute tidak boleh kosong!',
+                'digits' => ':attribute harus :digits digit!',
+                // 'digits_between' => ':attribute harus antara :min - :max',
+            ];
+
+    }
+
+    public function attributes(): array
+    {
+        return [
+            'nik' => 'NIK',
+            'password' => 'Password',
         ];
     }
 }
