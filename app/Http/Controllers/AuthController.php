@@ -23,7 +23,8 @@ class AuthController extends Controller
             // Authentication passed, generate token
             $user = Auth::user();
             $token = JWTAuth::fromUser($user); // Generate JWT token
-            return response()->json(compact('token')); // Return token to frontend
+            $name = $user->full_name;
+            return response()->json(compact(['token', 'name'])); // Return token to frontend
         }
 
         return response()->json(['error' => 'Unauthorized'], 401);
