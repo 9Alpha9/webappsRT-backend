@@ -40,7 +40,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             'required' => ':attribute harus di isi',
-            'digits' => ':attribute harus :value digit',
+            'digits' => ':attribute harus :input digit',
             'digits_between' => ':attribute harus antara :min - :max',
         ];
     }
