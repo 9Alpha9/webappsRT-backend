@@ -40,7 +40,7 @@ class AuthController extends Controller
                 $checkNIK = User::where('nik', '=', $request['nik'])->get();
 
                 if ($checkNIK->count() > 0) {
-                    return response()->json(['messasge' => "NIK Sudah terdaftar!"], 400);
+                    return response()->json(['message' => "NIK Sudah terdaftar!"], 400);
                 }
             } catch (\Exception $e) {
                 return response()->json(['message' => $e->getMessage()], 400);
